@@ -1,2 +1,9 @@
 # Simple-NodeJS-App-with-Database
-### testing
+### Steps to run the project initially
+
+```
+npm init
+npm install express
+
+nodejs Backend/index.js
+```
