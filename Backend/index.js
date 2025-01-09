@@ -5,7 +5,7 @@ const app = express();
 const PORT = 5000;
 
 app.use(express.static(path.join(__dirname, '../Frontend/views/')));
-app.use(express.static(path.join(__dirname, '../Frontend/static/')));
+app.use("/static", express.static(path.join(__dirname, '../Frontend/static/')));
 
 app.get('/', (req, res)=>{
     res.status(200);
