@@ -1,1 +1,48 @@
-Login
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Login Form</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/bootstrap.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row"></div>
+            <div class="row">
+                <h1>Log In</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+                    <div class="row alert alert-warning hidden" id="message-div">
+                    </div>
+
+                    <div class="row hidden" id="serv-resp">
+                    </div>
+
+                    <form method="post" id="login-form" class="form">
+                        <div class="row">
+                            <label for="username">Username: </label>
+                            <input type="text" name="username" id="username">
+                        </div>
+                        <div class="row">
+                            <label for="password">Password: </label>
+                            <input type="password" name="password" id="password">
+                        </div>
+                        <div class="row">
+                            <input type="submit" name="submit" id="submit" value="Log in your account">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
