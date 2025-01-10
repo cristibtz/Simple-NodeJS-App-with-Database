@@ -55,8 +55,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Blockchain Type</th>
-                    <th>Launch Date</th>
+                    <th>Amount</th>
                     <th></th>
                 </tr>
             </thead>
@@ -65,10 +64,9 @@
                     <tr>
                         <td><%= crypto.Name %></td>
                         <td><%= crypto.Price %></td>
-                        <td><%= crypto['Blockchain Type'] %></td>
-                        <td><%= new Date(crypto['Launch Date']).toLocaleDateString() %></td>
+                        <td><%= crypto.Amount %></td>
                         <% if (req.session && req.session.username) { %>
-                        <td><a href="/buy/<%= crypto.Crypto_ID %>">Buy</a></td>
+                        <td><a href="/Sell/<%= crypto.Crypto_ID %>">Sell</a></td>
                         <% } 
                         %>
                     </tr>

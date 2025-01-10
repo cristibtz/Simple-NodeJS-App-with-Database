@@ -28,8 +28,11 @@ app.use(userRoutes);
 
 //Landing page
 app.get('/', (req, res)=>{
+    if (req.session && req.session.username) {
+        return res.redirect('/dashboard');
+    }
     res.status(200);
-    res.sendFile(path.join(__dirname, '../Frontend/views/', 'index.html'));
+    res.status(200).sendFile(path.join(__dirname, '../Frontend/views/', 'index.html'));
 });
 
 app.listen(PORT, '0.0.0.0',(error) =>{
