@@ -16,7 +16,7 @@
                     <div class="logo">
                         <a id="logo">
                             <i class="fa-solid fa-computer"></i>
-                            <p>Welcome to CryptoBros!</p>
+                            <p>CryptoBros</p>
                         </a>
                     </div>
                 </div>
@@ -42,9 +42,51 @@
         </div>
     </div>
     <div class="content">
-        <h1>Welcome, <%= username %>!</h1>
-    <p>Profile Info: <%= profile_info %></p>
-    <p>Funds: <%= funds %></p>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <h1>Welcome, <%= username %>!</h1>
+        </header>
+        <div class="dashboard-content">
+            <div class="card profile-card">
+                <h2>Profile Info</h2>
+                <p><%= profile_info %></p>
+            </div>
+            <div class="card funds-card">
+                <h2>Funds</h2>
+                <p><%= funds %></p>
+            </div>
+            <div class="card actions-card">
+                <h2>Quick Actions</h2>
+                <ul>
+                    <li><a href="#">View Transactions</a></li>
+                    <li><a href="#">Add Funds</a></li>
+                    <li><a href="#">Update Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="copyright">
+                        All rights reserved © CRYPTOBROS
+                    </div>
+                </div>
+                <div class="col-md-4 contact-info">
+                    <p>Bulevardul Metalurgiei</p>
+                    <p>|</p>
+                    <p>07xxxxxxxx</p>
+                    <p>|</p>
+                    <p>contact@007cryptobros.com</p>
+                </div>
+                <div class="col-md-4 contact-info">
+                    <p>Authorised Crypto Stock Market</p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
