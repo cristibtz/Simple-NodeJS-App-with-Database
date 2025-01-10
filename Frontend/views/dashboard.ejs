@@ -4,13 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/bootstrap.css">
+
 </head>
 <body>
-    <h1>Welcome, <%= username %>!</h1>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a id="logo">
+                            <i class="fa-solid fa-computer"></i>
+                            <p>Welcome to CryptoBros!</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="navigation">
+                        <ul class="menu">
+                            <li><a href="/market">Market</a></li>
+                            <li><a href="/dashboard">Your account</a></li>
+                            <li><a href="/wallet">Your Wallet</a></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="navigation">
+                        <ul class="menu">
+                            <li><a href="/logout">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Welcome, <%= username %>!</h1>
     <p>Profile Info: <%= profile_info %></p>
     <p>Funds: <%= funds %></p>
-    <form action="/logout" method="post">
-        <button type="submit">Logout</button>
-    </form>
+    </div>
 </body>
 </html>

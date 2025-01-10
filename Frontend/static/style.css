@@ -72,6 +72,25 @@ body {
     font-size: 26px;
     text-transform: uppercase;
 }
+.menu-forms a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.menu-forms a:hover{
+    text-decoration: none;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    padding: 3px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.menu-forms{
+    padding-left: 10px;
+    padding-top: 10px;
+    margin: 10px;
+   height: 80px;
+}
 .content {
     padding-bottom: 20vh;
 }
