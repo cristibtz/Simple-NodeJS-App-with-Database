@@ -3,15 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/bootstrap.css">
+
 </head>
 <body>
-    
-    <ul>
-        <% cryptocurrencies.forEach(function(crypto) { %>
-            <li><%= crypto.Name %> - <%= crypto.Price %> - <%= crypto['Blockchain Type'] %> - <%= crypto['Launch Date'].toLocaleDateString() %> </li>
-        <% }); %>
-    </ul>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a id="logo">
+                            <i class="fa-solid fa-computer"></i>
+                            <p>Welcome to CryptoBros!</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="navigation">
+                        <ul class="menu">
+                            <li><a href="/market">Market</a></li>
+                            <li><a href="/dashboard">Your account</a></li>
+                            <li><a href="/wallet">Your Wallet</a></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="navigation">
+                        <ul class="menu">
+                            <li><a href="/logout">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 
+    <div style="margin-top: 20px;"></div>
+
+    <div class="content container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Blockchain Type</th>
+                    <th>Launch Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% cryptocurrencies.forEach(function(crypto) { %>
+                    <tr>
+                        <td><%= crypto.Name %></td>
+                        <td><%= crypto.Price %></td>
+                        <td><%= crypto['Blockchain Type'] %></td>
+                        <td><%= new Date(crypto['Launch Date']).toLocaleDateString() %></td>
+                        <td><a href="/buy/<%= crypto.Crypto_ID %>">Buy</a></td>
+
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
