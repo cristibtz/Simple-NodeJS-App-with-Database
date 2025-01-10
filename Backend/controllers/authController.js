@@ -37,7 +37,7 @@ exports.postLogin = (req, res)=>{
             
             return res.redirect('/dashboard');
         } else {
-            return res.status(401).json({ message: 'Invalid credentials' });
+            return res.status(200).json({ message: 'Invalid credentials' });
         }
     });
 
@@ -59,16 +59,6 @@ exports.postRegister = (req, res)=>{
     if (!username || !password) {
         return res.status(400).json({ message: 'Username and password are required' });
     } 
-    else {
-        db.query('SELECT * FROM user WHERE Name = ?', [username], (error, results) => {
-            if (error) {
-                console.log(error);
-            }
-            if (results.length > 0) {
-                return res.json({ message: 'Username unavailable' });
-            }
-        });
-    } 
 
     if (password !== confirm_password) {
         return res.json({ message: 'Passwords do not match' });
@@ -83,15 +73,25 @@ exports.postRegister = (req, res)=>{
         return res.status(400).json({ message: 'Invalid funds. Please enter a value between 0 and 1000. More can be added later...' });
     }
 
-    //If all valid, let's insert the user, I guess
-    const insertUserQuery = 'INSERT INTO user (Profile_Info, Name, Password, Funds) VALUES (?, ?, ?, ?)';
-        db.query(insertUserQuery, [profile_info,username, password, funds], (err, results) => {
-            if (err) {
-                console.error('Error inserting user:', err);
-                return res.status(500).json({ message: 'Internal server error' });
-            }
-            res.status(201).json({ message: 'User registered successfully' });
+    db.query('SELECT * FROM user WHERE Name = ?', [username], (error, results) => {
+        if (error) {
+            console.log(error);
+        }
+        if (results.length > 0) {
+            return res.json({ message: 'Username unavailable' });
+        } else {
+            //If all valid, let's insert the user, I guess
+            const insertUserQuery = 'INSERT INTO user (Profile_Info, Name, Password, Funds) VALUES (?, ?, ?, ?)';
+            db.query(insertUserQuery, [profile_info,username, password, funds], (err, results) => {
+                if (err) {
+                    console.error('Error inserting user:', err);
+                    return res.status(500).json({ message: 'Internal server error' });
+                }
+                res.status(201).json({ message: 'User registered successfully' });
+            });
+        }
     });
+
 }
 
 //Logout
