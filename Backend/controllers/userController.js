@@ -1,7 +1,6 @@
 const path = require('path');
 const db = require('../database.js');
 
-
 //User features
 exports.dashboard = (req, res)=>{
     res.status(200).render('dashboard', {
@@ -53,9 +52,6 @@ exports.wallet = (req, res)=>{
                 cryptocurrencies: results,
                 req: req
             });
-
-           console.log(results);
-           
         } else {
             res.status(404).send('No cryptocurrencies found');
         }

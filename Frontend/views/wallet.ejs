@@ -56,6 +56,7 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Amount</th>
+                    <th>Amount to sell</th>
                     <th></th>
                 </tr>
             </thead>
@@ -66,7 +67,10 @@
                         <td><%= crypto.Price %></td>
                         <td><%= crypto.Amount %></td>
                         <% if (req.session && req.session.username) { %>
-                        <td><a href="/Sell/<%= crypto.Crypto_ID %>">Sell</a></td>
+                        <form action="/sell/<%= crypto.Crypto_ID %>" method="POST">
+                            <td><input type="number" name="amount" id="amount" min="1" max="1000" value="1"></td>
+                            <td><button class="btn btn-primary">Sell</button></td>
+                        </form>
                         <% } 
                         %>
                     </tr>
