@@ -4,7 +4,7 @@
 
 ```
 npm init
-npm install express mysql dotenv
+npm install express mysql dotenv express-session ejs
 touch .env
 
 nodejs Backend/index.js

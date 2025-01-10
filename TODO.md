@@ -1,5 +1,5 @@
 # TODO List
 
-### 1. Register/Login
+### 1. Register/Login -- DONE
 ### 2. Crypto market
 ### 3. User dashboard with wallet
