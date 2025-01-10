@@ -249,3 +249,100 @@ form .row select{
     outline: none;
     border: 1px solid black;
 }
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    text-align: center;
+    align-items: center;
+
+}
+
+.logout-button {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #ff2e2e;
+}
+
+/* Content styles */
+.dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #000000;
+}
+
+.card p, .card ul {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.card ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.card ul li {
+    margin: 5px 0;
+}
+
+.card ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.card ul li a:hover {
+    text-decoration: underline;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer styles */
+.dashboard-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+    font-size: 0.9rem;
+}
