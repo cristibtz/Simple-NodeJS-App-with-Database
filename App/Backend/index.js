@@ -7,7 +7,7 @@ const userRoutes = require('./routes/user');
 require("dotenv").config();
 
 const app = express();
-const PORT = 5000;
+const PORT = 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../Frontend/views'));

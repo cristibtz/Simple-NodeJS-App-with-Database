@@ -7,7 +7,7 @@
 #### Install node and clone repo, then run in repo folder:
 ```
 npm init
-npm install express mysql dotenv express-session ejs nodemon
+npm install express mysql2 dotenv express-session ejs nodemon
 touch .env
 ```
 #### Add to .env:
@@ -28,5 +28,11 @@ SECRET_KEY=secret
 ```
 #### Run project:
 ```
+cd App
 npm run dev
+```
+
+### Dockerized
+```
+docker compose up --build
 ```
