@@ -12,7 +12,7 @@ touch .env
 ```
 #### Add to .env:
 ```
-DB_HOST=localhost
+DB_HOST=mysql-db
 DB_USER=mysql_user
 DB_PASSWORD=mysql_pass
 DB_DATABASE=mysql_dbname
