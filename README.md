@@ -6,8 +6,10 @@
 
 #### Install node and clone repo, then run in repo folder:
 ```
+cd App
 npm init
 npm install express mysql2 dotenv express-session ejs nodemon
+cd ..
 touch .env
 ```
 #### Add to .env:
