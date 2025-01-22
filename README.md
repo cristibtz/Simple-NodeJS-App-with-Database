@@ -6,13 +6,15 @@
 
 #### Install node and clone repo, then run in repo folder:
 ```
+cd App
 npm init
 npm install express mysql2 dotenv express-session ejs nodemon
+cd ..
 touch .env
 ```
 #### Add to .env:
 ```
-DB_HOST=localhost
+DB_HOST=mysql-db
 DB_USER=mysql_user
 DB_PASSWORD=mysql_pass
 DB_DATABASE=mysql_dbname
